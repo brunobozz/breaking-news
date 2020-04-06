@@ -12,11 +12,10 @@ export class ContentComponent implements OnInit {
 
   constructor(
     private newsapiService: NewsapiService,
-  ) {
-    this.newsapiService.loadPosts();
-  }
+  ) {}
 
   ngOnInit() {
+    this.newsapiService.loadPosts();
     this.posts = this.newsapiService.posts;
   }
 

@@ -1,6 +1,4 @@
 <div class="container">
-
-    <h1>Notícias</h1>
     <div class="row">
         <ng-container *ngFor="let post of posts">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4" style="align-items:stretch" *ngIf="post.urlToImage">
@@ -14,7 +12,7 @@
 
                         <h5>{{ post.description }}</h5>
                         <p class="card-text">{{ post.content }}</p>
-                        <a [href]="post.url" target="_blank" class="btn btn-primary">Veja Mais</a>
+                        <a [href]="post.url" target="_blank" class="btn btn-light">Veja Mais</a>
                     </div>
                 </div>
             </div>

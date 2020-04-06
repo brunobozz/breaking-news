@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsapiService } from "../../modules/newsapi/services/newsapi.service";
 
 @Component({
   selector: 'app-content',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  public posts: any[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private newsapiService: NewsapiService,
+  ) {
+    this.newsapiService.loadPosts();
+  }
+
+  ngOnInit() {
+    this.posts = this.newsapiService.posts;
   }
 
 }

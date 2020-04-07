@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsapiService } from "../../modules/newsapi/services/newsapi.service";
 
 @Component({
   selector: 'app-categoryes',
@@ -7,15 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryesComponent implements OnInit {
 
-  public categoryes: string[] = ["entertainment", "sports", "business", "health", "science", "technology"];
+  public categories: string[] = this.newsapiService.apiCategories;
 
-  constructor() { }
+  constructor(private newsapiService: NewsapiService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  changeCategory(category){
-    console.log(category);
+  public sendCategory(category: string) {
+    // this.newsapiService.changeCategory(category)
   }
 
 }

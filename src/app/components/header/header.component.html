@@ -1,16 +1,19 @@
 <!-- Just an image -->
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-        <img src="/assets/images/logo/logo.png" width="30" height="30" alt="">
-        <span class="ml-2">Fucking News</span>
-    </a>
-    <!-- Example single danger button -->
-    <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Countries
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item text-uppercase" href="#" *ngFor="let country of countries" (click)="changeCountry(country)">{{ country }}</a>
-        </div>
+  <a class="navbar-brand" href="#">
+    <img src="/assets/images/logo/logo.png" width="30" height="30" alt="">
+    <span class="ml-2">Breaking News</span>
+  </a>
+  <!-- Example single danger button -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
+      <img class="flag-icon" src="../assets/images/flags/{{apiCountry}}.svg">
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <a class="dropdown-item text-uppercase" href="#" *ngFor="let country of countries"
+        (click)="changeCountry(country)"><img class="flag-icon"
+          src="../assets/images/flags/{{country}}.svg">{{ country }}</a>
     </div>
+  </div>
 </nav>

@@ -11,16 +11,17 @@ export class ContentComponent implements OnInit {
   public apiCountry: string = this.newsapiService.apiCountry;
   public apiCategory: string = this.newsapiService.apiCategory;
   public categories: string[] = this.newsapiService.apiCategories;
-  public countries: string[] = ['br', 'us', 'ch', 'it', 'ru', 'jp', 'ar'];
-  // public countries: string[] = this.newsapiService.apiCountries;
   public posts: any[] = [];
 
   constructor(
     private newsapiService: NewsapiService,
-  ) { }
+  ) {}
 
   ngOnInit() {
-    this.loadNews('br', '');
+    this.loadNews('BR', '');
+    this.newsapiService.countryChange.subscribe((country: string) => this.loadNews(country,''));
+    this.newsapiService.countryChange.subscribe((country: string) => this.apiCountry = country);
+    
   }
 
   public loadNews(country: string, category: string) {
@@ -33,11 +34,5 @@ export class ContentComponent implements OnInit {
     this.apiCategory = category;
     this.loadNews(null, category);
   }
-
-  public changeCountry(country: string) {
-    this.apiCountry = country;
-    this.loadNews(country, null);
-  }
-
 
 }

@@ -8,15 +8,19 @@ import { NewsapiService } from "../../modules/newsapi/services/newsapi.service";
 })
 export class HeaderComponent implements OnInit {
 
-  public countries: string[] = this.newsapiService.apiCountries;
+  public apiCountry: string;
+  public countries: string[] = ['AR', 'BR', 'US', 'CH', 'IT', 'RU', 'JP', 'CN', 'FR'];
+  // public countries: string[] = this.newsapiService.apiCountries;
 
   constructor(private newsapiService: NewsapiService, ) { }
 
   ngOnInit(): void {
+    this.apiCountry = this.newsapiService.apiCountry
   }
 
   public changeCountry(country: string) {
     this.newsapiService.changeCountry(country);
+    this.apiCountry = country;
   }
 
 }

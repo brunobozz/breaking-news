@@ -1,33 +1,37 @@
 <div class="container">
 
-    <div class="row">
-        <div class="col-md-2 col-sm-6 col-xs-12" *ngFor="let category of categories">
-            <button type="button" class="btn btn-block mt-4 mb-4 text-uppercase" [ngClass]="{'btn-secondary': category != apiCategory, 'btn-primary': category === apiCategory}" (click)=" changeCategory(category)">{{ category }}</button>
+  <div class="row">
+    <div class="col-md-2 col-sm-6 col-xs-6" *ngFor="let category of categories">
+      <button type="button" class="btn btn-block mt-4 mb-4 text-uppercase"
+        [ngClass]="{'btn-secondary': category != apiCategory, 'btn-primary': category === apiCategory}"
+        (click)=" changeCategory(category)">{{ category }}</button>
+    </div>
+  </div>
+  <!-- <div class="text-left">
+    <button type="button " class="btn btn-sm btn-secondary ml-1 mb-1 text-uppercase"
+      [ngClass]="{'btn-secondary': country != apiCountry, 'btn-primary': country === apiCountry}"
+      *ngFor="let country of countries " (click)="changeCountry(country) ">{{ country }}</button>
+  </div> -->
+
+  <h1 class="text-center">{{ apiCategory }} news from <span style="text-transform: uppercase;">"{{ apiCountry }}"</span></h1>
+  <div class="row ">
+    <ng-container *ngFor="let post of posts">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4" style="align-items:stretch">
+        <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 " style="align-items:stretch " *ngIf="post.urlToImage "> -->
+        <div class="card ">
+          <div class="card-header ">
+            <h4 class="card-title "><a [href]="post.url">{{ post.title }}</a></h4>
+          </div>
+          <img class="img-fluid " alt="Responsive image " [src]="post.urlToImage " *ngIf="post.urlToImage">
+          <div class="card-body ">
+            <p>{{ post.publishedAt | date:'medium' }}<br> <span *ngIf="post.author ">Author: {{ post.author }}</span></p>
+
+            <h5>{{ post.description }}</h5>
+            <p class="card-text ">{{ post.content }}</p>
+            <a [href]="post.url" target="_blank " class="btn btn-light ">Veja Mais</a>
+          </div>
         </div>
-    </div>
-    <div class="text-right ">
-        <span>Countries - </span>
-        <button type="button " class="btn btn-sm btn-secondary ml-1 text-uppercase" [ngClass]="{'btn-secondary': country != apiCountry, 'btn-primary': country === apiCountry}" *ngFor="let country of countries " (click)="changeCountry(country) ">{{ country }}</button>
-    </div>
-
-    <h1 class="text-center " style="text-transform: uppercase; ">{{ apiCountry }} - {{ apiCategory }}</h1>
-    <div class="row ">
-        <ng-container *ngFor="let post of posts ">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-4 " style="align-items:stretch " *ngIf="post.urlToImage ">
-                <div class="card ">
-                    <div class="card-header ">
-                        <h4 class="card-title ">{{ post.title }}</h4>
-                    </div>
-                    <img class="img-fluid " alt="Responsive image " [src]="post.urlToImage ">
-                    <div class="card-body ">
-                        <p>{{ post.publishedAt }}<br> <span *ngIf="post.author ">Por: {{ post.author }}</span></p>
-
-                        <h5>{{ post.description }}</h5>
-                        <p class="card-text ">{{ post.content }}</p>
-                        <a [href]="post.url " target="_blank " class="btn btn-light ">Veja Mais</a>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
-    </div>
+      </div>
+    </ng-container>
+  </div>
 </div>

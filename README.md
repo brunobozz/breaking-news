@@ -1,6 +1,10 @@
 # BreakingNews
+This is a simple application created with angular 9 to show top-headlines of news in the world. The application use "newsapi" to get the informations and show the content. We can filter by 6 categories and change for 9 countries.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+To use the app you need create a apiKey on https://newsapi.org/
+After, just clone and put your apiKey on 'newsapi.service.ts'
+
+Angular CLIs version 9.0.7.
 
 ## Development server
 

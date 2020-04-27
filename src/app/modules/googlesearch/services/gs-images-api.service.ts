@@ -12,7 +12,9 @@ export class GsImagesApiService {
   private API_KEY: string = environment.GCS_API_KEY;
   private API_URL: string = environment.GCS_API_URL;
   private GCS_ID: string = environment.GCS_ID;
-  private URL: string = this.API_URL + '?key=' + this.API_KEY + '&cx=' + this.GCS_ID + '&searchType=image' + '&q=';
+  // private GCS_IMG_SIZE: string = '&imgSize=medium'
+  private GCS_IMG_SIZE: string = ''
+  private URL: string = this.API_URL + '?key=' + this.API_KEY + '&cx=' + this.GCS_ID + '&searchType=image' + this.GCS_IMG_SIZE + '&q=';
 
   constructor(private http: HttpClient) { }
 

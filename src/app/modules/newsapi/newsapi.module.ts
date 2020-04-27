@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 //SERVICES
 import { NewsapiService } from './services/newsapi.service';
+
 @NgModule({
   declarations: [],
   imports: [

@@ -3,6 +3,7 @@ This is a simple application created with angular 9 to show top-headlines of new
 
 ![Sports News From Argentina](https://raw.githubusercontent.com/brunobozz/breaking-news/master/images_demo/01.PNG)
 
+## How to use
 
 To use the app you need create a apiKey on https://newsapi.org/ and Google Custom Search API KEY
 

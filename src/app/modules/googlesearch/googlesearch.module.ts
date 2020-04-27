@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //SERVICES
-import { NewsapiService } from './services/newsapi.service';
+import { GsImagesApiService } from './services/gs-images-api.service';
 
 @NgModule({
   declarations: [],
@@ -10,7 +10,7 @@ import { NewsapiService } from './services/newsapi.service';
     CommonModule
   ],
   providers: [
-    NewsapiService
+    GsImagesApiService
   ]
 })
-export class NewsapiModule { }
+export class GooglesearchModule { }

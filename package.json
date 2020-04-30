@@ -22,7 +22,7 @@
     "angular-news-api": "0.0.7",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "newsapi": "^2.4.0",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",

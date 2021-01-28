@@ -10,5 +10,5 @@ export const environment = {
   GCS_ID: 'YOUR Google Custom Search ID',
 
   NEWS_API_URL: "http://newsapi.org/v2/",
-  NEWS_API_KEY: "https://github.com/brunobozz/breaking-news.git"
+  NEWS_API_KEY: "7f3816ce018f4311b7b570904538eaf4"
 };

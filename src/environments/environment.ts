@@ -10,5 +10,5 @@ export const environment = {
   GCS_ID: 'YOUR Google Custom Search ID',
 
   NEWS_API_URL: "http://newsapi.org/v2/",
-  NEWS_API_KEY: "YOUR NEWS KEY"
+  NEWS_API_KEY: "YOUR NEWS KEY "
 };
